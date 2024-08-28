@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://ydvjf4xr8xoc"]
+
+[ext_resource type="FontFile" uid="uid://cnxvhf3o1x2ua" path="res://fonts/Cubic_11.ttf" id="1_jlrvo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjvnv"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0, 0, 0, 1)
+
+[resource]
+default_font = ExtResource("1_jlrvo")
+default_font_size = 33
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_vjvnv")
+TooltipLabel/font_sizes/font_size = 22

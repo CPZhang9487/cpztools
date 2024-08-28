@@ -1,0 +1,158 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7h8p3klpfo1s"]
+
+[ext_resource type="Theme" uid="uid://ydvjf4xr8xoc" path="res://windows/window_darkmode.tres" id="1_6r6si"]
+[ext_resource type="Script" path="res://windows/window_help.gd" id="2_fvukj"]
+[ext_resource type="Texture2D" uid="uid://cx6p4p3s27tm3" path="res://icons/icon.svg" id="3_gi24c"]
+[ext_resource type="Texture2D" uid="uid://bymplgcfov5h1" path="res://windows/images/TutorialCreateFloatingWindow_001.png" id="4_5nuiu"]
+[ext_resource type="Texture2D" uid="uid://xcwlkx1eg2kg" path="res://windows/images/TutorialCreateFloatingWindow_002.png" id="5_dedae"]
+[ext_resource type="Texture2D" uid="uid://5pyfkh2mqkh8" path="res://windows/images/TutorialCreateFloatingWindow_003.png" id="6_mqbem"]
+
+[node name="WindowHelp" type="Window"]
+title = "幫助"
+initial_position = 1
+size = Vector2i(1152, 648)
+exclusive = true
+theme = ExtResource("1_6r6si")
+script = ExtResource("2_fvukj")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Menu" type="Tree" parent="PanelContainer/HSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+hide_root = true
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.201527, 0.201527, 0.201527, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HSplitContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Contents" type="MarginContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ManualFonts" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/ManualFonts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "字體"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/ManualFonts"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LinkButton" type="LinkButton" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/ManualFonts/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+tooltip_text = "https://github.com/ACh-K/Cubic-11/tree/main"
+text = "俐方體11號 / Cubic 11"
+uri = "https://github.com/ACh-K/Cubic-11/tree/main"
+
+[node name="ManualAbout" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/ManualAbout"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/ManualAbout/VBoxContainer"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_gi24c")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/ManualAbout/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "By Godot v4.3"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/ManualAbout"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/ManualAbout/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_gi24c")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/ManualAbout/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "By Godot v4.3"
+horizontal_alignment = 1
+
+[node name="TutorialCreateFloatingWindow" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "在編輯器中選擇 [專案>專案設定]"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_5nuiu")
+stretch_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "開啟右上角的 [進階設定]
+並在 [顯示>視窗]
+關閉 [可調整大小的, 嵌入式子視窗]
+開啟 [無邊框, 一律置頂, 透明, 每像素透明度>允許]"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("5_dedae")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("6_mqbem")
+stretch_mode = 2
+
+[connection signal="item_selected" from="PanelContainer/HSplitContainer/Menu" to="." method="_on_menu_item_selected"]
