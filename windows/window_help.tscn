@@ -1,17 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7h8p3klpfo1s"]
+[gd_scene load_steps=10 format=3 uid="uid://b7h8p3klpfo1s"]
 
 [ext_resource type="Theme" uid="uid://ydvjf4xr8xoc" path="res://windows/window_darkmode.tres" id="1_6r6si"]
 [ext_resource type="Script" path="res://windows/window_help.gd" id="2_fvukj"]
-[ext_resource type="Texture2D" uid="uid://cx6p4p3s27tm3" path="res://icons/icon.svg" id="3_gi24c"]
-[ext_resource type="Texture2D" uid="uid://bymplgcfov5h1" path="res://windows/images/TutorialCreateFloatingWindow_001.png" id="4_5nuiu"]
-[ext_resource type="Texture2D" uid="uid://xcwlkx1eg2kg" path="res://windows/images/TutorialCreateFloatingWindow_002.png" id="5_dedae"]
-[ext_resource type="Texture2D" uid="uid://5pyfkh2mqkh8" path="res://windows/images/TutorialCreateFloatingWindow_003.png" id="6_mqbem"]
+[ext_resource type="Texture2D" uid="uid://bu8qr57gc6iwu" path="res://icons/icon.svg" id="3_gi24c"]
+[ext_resource type="Texture2D" uid="uid://7ehfalksd1cn" path="res://windows/images/TutorialCreateFloatingWindow_001.png" id="4_5nuiu"]
+[ext_resource type="Texture2D" uid="uid://bu0bu10q8ojmn" path="res://windows/images/TutorialCreateFloatingWindow_002.png" id="5_dedae"]
+[ext_resource type="Texture2D" uid="uid://yus0r8ybqt5i" path="res://windows/images/TutorialCreateFloatingWindow_003.png" id="6_mqbem"]
+[ext_resource type="Texture2D" uid="uid://de0q8dsbfhv78" path="res://windows/images/TutorialCreateFloatingWindow_004.png" id="7_l0tv2"]
+[ext_resource type="Texture2D" uid="uid://b51byog52i8pn" path="res://windows/images/TutorialCreateFloatingWindow_005.png" id="8_aa5am"]
+[ext_resource type="Texture2D" uid="uid://ba6h7ywo3vi1g" path="res://windows/images/TutorialCreateFloatingWindow_006.png" id="9_bk7s7"]
 
 [node name="WindowHelp" type="Window"]
 title = "幫助"
 initial_position = 1
 size = Vector2i(1152, 648)
 exclusive = true
+always_on_top = true
 theme = ExtResource("1_6r6si")
 script = ExtResource("2_fvukj")
 
@@ -116,6 +120,7 @@ text = "By Godot v4.3"
 horizontal_alignment = 1
 
 [node name="TutorialCreateFloatingWindow" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -153,6 +158,53 @@ stretch_mode = 2
 [node name="TextureRect2" type="TextureRect" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer2"]
 layout_mode = 2
 texture = ExtResource("6_mqbem")
+stretch_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "建立TextureRect節點並放上圖片與設定大小
+這邊使用256x256大小的圖片並縮放到64x64"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("7_l0tv2")
+stretch_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer4"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "建立腳本並設置視窗位置與大小
+如果需要獲取螢幕大小
+可以使用DisplayServer.screen_get_size
+運行之後會像這樣"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("8_aa5am")
+stretch_mode = 2
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer5"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "要進行簡單的移動的話可以參考下方程式碼
+使用滑鼠右鍵長按拖曳"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HSplitContainer/ColorRect/ScrollContainer/Contents/TutorialCreateFloatingWindow/VBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("9_bk7s7")
 stretch_mode = 2
 
 [connection signal="item_selected" from="PanelContainer/HSplitContainer/Menu" to="." method="_on_menu_item_selected"]

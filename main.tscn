@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://bl8ngboavxsd6"]
+[gd_scene load_steps=3 format=3 uid="uid://bl8ngboavxsd6"]
+
+[ext_resource type="Texture2D" uid="uid://jsuc22spuxas" path="res://icons/CPZToolsIcon.png" id="1_2yexv"]
+[ext_resource type="Script" path="res://main.gd" id="1_7dl66"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_7dl66")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 64)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2yexv")
+expand_mode = 2
