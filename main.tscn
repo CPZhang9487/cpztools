@@ -6,9 +6,27 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_7dl66")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Icon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(0, 64)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 64.0
+offset_bottom = 64.0
 texture = ExtResource("1_2yexv")
 expand_mode = 2
+
+[node name="Window" type="Window" parent="."]
+transparent_bg = true
+mode = 3
+visible = false
+transient = true
+unresizable = true
+borderless = true
+transparent = true
+popup_window = true
+
+[node name="Background" type="ColorRect" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.5, 0, 0.3)

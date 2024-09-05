@@ -1,7 +1,14 @@
 extends Node
 
 
-var _is_moving := false
+var _is_moving := false:
+	set(value):
+		if _is_moving == value:
+			return
+		_is_moving = value
+		var window := get_window()
+		$Window.visible = _is_moving
+		window.always_on_top = true
 
 
 func _input(event: InputEvent) -> void:
@@ -13,9 +20,10 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 	var window := get_window()
 	window.position = Vector2.ZERO
-	window.size = $TextureRect.size
+	window.size = $Icon.size
 
 
 func _physics_process(delta: float) -> void:
+	var window := get_window()
 	if _is_moving:
-		get_window().position = DisplayServer.mouse_get_position() - Vector2i.ONE * 32
+		window.position = DisplayServer.mouse_get_position() - Vector2i.ONE * 32
